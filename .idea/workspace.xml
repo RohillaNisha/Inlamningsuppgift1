@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="de80fda5-50b4-4ec5-95ec-7f7dd4deea99" name="Changes" comment="Created new class and interfaces to follow SOLID principles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StaffAddition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StaffAddition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StaffModification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StaffModification.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

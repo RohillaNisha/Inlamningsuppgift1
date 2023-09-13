@@ -21,15 +21,24 @@ public class StaffAddition extends Menu {
     }
 
     public void addAnEmployee() {
-        System.out.println("What is the id of the new employee?");
-        int id = scanner.nextInt();
-        for(Staff staff: Staff.getAllStaff()){
-            while(staff.getId() == id){
-                System.out.println("This id belongs to another staff and can't be used here. \n Please choose another id , preferably number after " + noOfStaff);
-                id = scanner.nextInt();
+        boolean idExists = false;
+        int id = 0;
+        do{
+            System.out.println("What is the id of the new employee?");
+            id = scanner.nextInt();
+            idExists = false;
+
+            for(Staff staff: Staff.getAllStaff()){
+                if(staff.getId() == id){
+                    idExists = true;
+                    System.out.println("This id belongs to another staff and can't be used here. \n Please choose another id , preferably number after " + noOfStaff);
+                    break;
+                }
             }
-        }
-        scanner.nextLine();
+            scanner.nextLine();
+
+        } while (idExists);
+
         System.out.println("What is the name of the new employee?");
         String name = scanner.nextLine();
         System.out.println("Is the employee MALE/FEMALE? (use capital letters only) ");
@@ -52,15 +61,24 @@ public class StaffAddition extends Menu {
     }
 
     public void addAnIntern(){
-        System.out.println("What is the id of the new intern?");
-        int id = scanner.nextInt();
-        for(Staff staff: Staff.getAllStaff()){
-            while(staff.getId() == id){
-                System.out.println("This id belongs to another staff and can't be used here. \n Please choose another id , preferably number after " + noOfStaff);
-                id = scanner.nextInt();
+        boolean idExists = false;
+        int id = 0;
+        do{
+            System.out.println("What is the id of the new intern?");
+             id = scanner.nextInt();
+            idExists = false;
+
+            for(Staff staff: Staff.getAllStaff()){
+                if(staff.getId() == id){
+                    idExists = true;
+                    System.out.println("This id belongs to another staff and can't be used here. \n Please choose another id , preferably number after " + noOfStaff);
+                    break;
+                }
             }
-        }
-        scanner.nextLine();
+            scanner.nextLine();
+
+        } while (idExists);
+
         System.out.println("What is the name of the intern? ");
         String name = scanner.nextLine();
         System.out.println("Is the intern MALE/FEMALE? (use capital letters only) ");

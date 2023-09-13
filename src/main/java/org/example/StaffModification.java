@@ -23,8 +23,9 @@ public class StaffModification extends Menu {
     }
 
     private void modifyAnIntern() {
+        boolean idExists = false;
         Intern internToModify = null;
-        int newId;
+        int newId = 0;
         String newName, newPerformance;
         Gender newGender;
         LocalDate newEndDate;
@@ -45,15 +46,21 @@ public class StaffModification extends Menu {
             System.out.println("Do you want to modify id? \n  YES/NO");
             String useConfirmationForId = scanner.nextLine();
             if (useConfirmationForId.equalsIgnoreCase("yes")) {
-                System.out.println("What is the new id ? ");
-                newId = scanner.nextInt();
-                for (Intern intern : internRepo.getInternList()) {
-                    while (intern.getId() == newId) {
-                        System.out.println("This id belongs to another staff and can't be used here. \n Please choose another id , preferably number after " + noOfStaff);
-                        newId = scanner.nextInt();
+                do{
+                    System.out.println("What is the id of the new employee?");
+                    newId = scanner.nextInt();
+                    idExists = false;
+
+                    for(Staff staff: Staff.getAllStaff()){
+                        if(staff.getId() == newId){
+                            idExists = true;
+                            System.out.println("This id belongs to another staff and can't be used here. \n Please choose another id , preferably number after " + noOfStaff);
+                            break;
+                        }
                     }
                     scanner.nextLine();
-                }
+
+                } while (idExists);
             }
             else{
                     newId = internToModify.getId();
@@ -116,8 +123,9 @@ public class StaffModification extends Menu {
     }
 
     private void modifyAnEmployee() {
+        boolean idExists = false;
         Employee employeeToModify = null;
-        int newId, newSalary;
+        int newId=0, newSalary;
         String newName;
         Gender newGender;
         LocalDate newJoiningDate;
@@ -138,15 +146,21 @@ public class StaffModification extends Menu {
             System.out.println("Do you want to modify id? \n  YES/NO");
             String useConfirmationForId = scanner.nextLine();
             if(useConfirmationForId.equalsIgnoreCase("yes")){
-                System.out.println("What is the new id ? ");
-                 newId = scanner.nextInt();
-                 for(Employee employee: employeeRepo.getEmployeeList()){
-                    while(employee.getId() == newId){
-                        System.out.println("This id belongs to another staff and can't be used here. \n Please choose another id , preferably number after " + noOfStaff);
-                        newId = scanner.nextInt();
+                do{
+                    System.out.println("What is the id of the new employee?");
+                    newId = scanner.nextInt();
+                    idExists = false;
+
+                    for(Staff staff: Staff.getAllStaff()){
+                        if(staff.getId() == newId){
+                            idExists = true;
+                            System.out.println("This id belongs to another staff and can't be used here. \n Please choose another id , preferably number after " + noOfStaff);
+                            break;
+                        }
                     }
-                }
-                 scanner.nextLine();
+                    scanner.nextLine();
+
+                } while (idExists);
             }
             else{
                 newId = employeeToModify.getId();
