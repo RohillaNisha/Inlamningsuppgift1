@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de80fda5-50b4-4ec5-95ec-7f7dd4deea99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Gender.java" afterDir="false" />
+    <list default="true" id="de80fda5-50b4-4ec5-95ec-7f7dd4deea99" name="Changes" comment="Created new class and interfaces to follow SOLID principles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Intern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Intern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Staff.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +72,13 @@
       <option name="presentableId" value="Default" />
       <updated>1693509301210</updated>
     </task>
+    <task id="LOCAL−00001" summary="Created new class and interfaces to follow SOLID principles.">
+      <created>1694608641018</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1694608641018</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +99,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Created new class and interfaces to follow SOLID principles." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created new class and interfaces to follow SOLID principles." />
   </component>
 </project>
