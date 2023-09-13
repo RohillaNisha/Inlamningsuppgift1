@@ -3,23 +3,72 @@ package org.example;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Employee extends Staff  {
-    final int salary;
+    private int salary;
+    private LocalDate joiningDate ;
 
-    LocalDate joiningDate ;
+    private Employee(int id, String name,Gender gender, int salary, LocalDate joiningDate ) {
 
-    public Employee(int salary, LocalDate joiningDate,  String name, String gender) {
-
-        super(name, gender);
-
+        super(id, name, gender);
         this.salary = salary;
         this.joiningDate = joiningDate;
     }
 
-    public int getSalary() {
+
+    public static class EmployeeBuilder {
+
+        private final int id;
+        private String name;
+        private Gender gender;
+        private int salary;
+        private LocalDate joiningDate;
+
+        public int getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public Gender getGender() {
+            return gender;
+        }
+
+        public int getSalary() {
+            return salary;
+        }
+
+        public LocalDate getJoiningDate() {
+            return joiningDate;
+        }
+
+        public EmployeeBuilder(int id, String name, Gender gender){
+           this.id = id;
+           this.name = name;
+           this.gender = gender;
+        }
+
+        public EmployeeBuilder salary(int salary){
+            this.salary = salary;
+            return this;
+        }
+
+        public EmployeeBuilder joiningDate(LocalDate joiningDate){
+            this.joiningDate = joiningDate;
+            return this;
+        }
+
+        public Employee build(){
+            return new Employee(id,name,gender,salary, joiningDate );
+        }
+
+    }
+
+
+   public int getSalary() {
         return salary;
     }
 
@@ -27,9 +76,6 @@ public class Employee extends Staff  {
         return joiningDate;
     }
 
-    public void setJoiningDate(LocalDate joiningDate) {
-        this.joiningDate = joiningDate;
-    }
 
     public static List getFemaleEmployeeList(List<Employee> employeeList){
 
@@ -37,7 +83,7 @@ public class Employee extends Staff  {
         List<Employee> femaleEmployeeList = new ArrayList<Employee>();
 
         for (Employee employee: employeeList){
-            if(employee.getGender() == "Female"){
+            if(employee.getGender() == Gender.FEMALE){
                 femaleEmployeeList.add(employee);
             }
         }
@@ -50,7 +96,7 @@ public class Employee extends Staff  {
         List<Employee> maleEmployeeList = new ArrayList<Employee>();
 
         for (Employee employee: employeeList){
-            if(employee.getGender() == "Male"){
+            if(employee.getGender() == Gender.MALE){
                 maleEmployeeList.add(employee);
             }
         }
@@ -59,15 +105,15 @@ public class Employee extends Staff  {
 
     public static int calculateAverageSalaryOneGender(List<Employee> genderBasedEmployeeList){
 
-        int totalMaleSalary = 0;
+        int totalGenderBasedSalary = 0;
 
         // Calculates Average Salary of Male employees from the list generated above.
 
         for(Employee oneGenderEmployee: genderBasedEmployeeList){
-            totalMaleSalary+= oneGenderEmployee.getSalary();
+            totalGenderBasedSalary+= oneGenderEmployee.getSalary();
         }
 
-        return totalMaleSalary/genderBasedEmployeeList.size();
+        return totalGenderBasedSalary/genderBasedEmployeeList.size();
 
     }
 
@@ -80,6 +126,11 @@ public class Employee extends Staff  {
 
     }
 
-
-
+    @Override
+    public String toString() {
+        return   super.toString() +
+                " salary=" + salary +
+                ", joiningDate=" + joiningDate
+                 ;
+    }
 }

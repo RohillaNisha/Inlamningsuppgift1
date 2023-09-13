@@ -8,23 +8,14 @@ public class Main {
 
 
     public static void main(String[] args) {
+        System.out.println("Starting Employee program...");
+        MenuSystem menuSystem = MenuSystem.getInstance();
 
-        Employee emp1 = new Employee(14000, LocalDate.of(2015,6,22) , "Guillaume", "Male");
-        Employee emp2 = new Employee(17000, LocalDate.of(2013,3,12) , "Colin", "Male");
-        Employee emp3 = new Employee(24000, LocalDate.of(2011,10,8) , "Zohra", "Female");
-        Employee emp4 = new Employee(34000, LocalDate.of(2009,9,8) , "Luca", "Male");
-        Intern intern1 = new Intern("Fabian", "Male", LocalDate.of(2023,5,19), "Good");
-        Intern intern2 = new Intern("Nisha", "Female", LocalDate.of(2023,7,2), "Good");
+        while (true) {
+            menuSystem.execute();
+        }
 
-        // An Array list of employees for doing collective calculations on employees
-        List<Employee> employeeList = new ArrayList<Employee>();
-        employeeList.add(emp1);
-        employeeList.add(emp2);
-        employeeList.add(emp3);
-        employeeList.add(emp4);
-
-
-        // To get the total no. of staff
+       /* // To get the total no. of staff
         int totalStaff = Staff.getTotalStaff();
         System.out.println("Total staff in company are " + totalStaff);
 
@@ -49,6 +40,6 @@ public class Main {
        // To get the list of employees sorted with joining dates
         Employee.getDateSortedEmployeeList(employeeList);
 
-
+    */
     }
 }
